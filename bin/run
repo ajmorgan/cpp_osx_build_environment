@@ -1,0 +1,8 @@
+#!/bin/bash
+# use this if you've had to make a library and need an LD_LIBRARY_PATH
+
+dir=$(dirname $0)
+lib_path=${dir}/../libcii/bin/
+exe=$(awk '/^BINARY_NAME/ {print $3}' ${dir}/../GNUmakefile)
+
+LD_LIBRARY_PATH=${lib_path} ${dir}/${exe}
