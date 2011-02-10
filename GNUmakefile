@@ -18,6 +18,7 @@ OBJECTS = ${SOURCES:.c=.o}
 
 all:
 		-ctags -R *
+		-cscope -bR $(find . -name *.[ch])
 		-tools/beautify.sh
 		${MAKE} -C obj objects
 		${MAKE} -C bin ${BINARY_NAME}
