@@ -1,5 +1,5 @@
-Build environment for starting a C project.
+Build environment for starting a C++ project.
 
-It is expected that you have astyle and ctags installed.
+If you have astyle, cscope and ctags installed, uncomment the appropriate lines in the GNUMakefuile under the 'all:' tag for some extra fu.
 
 Run tools/big-brother.sh to initialize your githooks & git aliases.  big-brother.sh is attached to your post-merge githook so that after each git pull, it will get rerun, allowing you to update githooks and tools.  Source files go in src, include files go in inc.  Enjoy.

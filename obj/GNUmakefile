@@ -2,7 +2,7 @@
 
 SRCDIR = ../src/
 INCDIR = ../inc/
-vpath %.c ${SRCDIR}
+vpath %.cpp ${SRCDIR}
 
 .phony: default objects clean
 
@@ -14,7 +14,7 @@ you must call make from the parent directory\n\
 
 objects: ${OBJECTS}
 
-%.o: %.c
+%.o: %.cpp
 		${CC} ${CC_DEP_FLAGS} $< -I${INCDIR}
 
 -include *.d

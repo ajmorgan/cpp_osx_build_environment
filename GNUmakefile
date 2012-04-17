@@ -4,22 +4,22 @@
 #    affected from this top level makefile
 
 BINARY_NAME = foo
-CC = gcc
+CC = clang++ 
 CC_FLAGS = 
 
-LIB_FLAGS = -lusb -lpthread 
+LIB_FLAGS = 
 
-CC_DEP_FLAGS = -MMD -g -c -Wall -D DEBUG=1
-SOURCES = ${notdir ${wildcard src/*.c}}
-OBJECTS = ${SOURCES:.c=.o}
+CC_DEP_FLAGS = -MMD -g -c -Wall -std=c++11
+SOURCES = ${notdir ${wildcard src/*.cpp}}
+OBJECTS = ${SOURCES:.cpp=.o}
 
 .EXPORT_ALL_VARIABLES: 
 .phony: all clean
 
 all:
-		-ctags -R *
-		-cscope -bR $(find . -name *.[ch])
-		-tools/beautify.sh
+		#-ctags -R *
+		#-cscope -bR $(find . -name *.[ch])
+		#-tools/beautify.sh
 		${MAKE} -C obj objects
 		${MAKE} -C bin ${BINARY_NAME}
 
