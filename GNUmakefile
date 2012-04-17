@@ -4,7 +4,7 @@
 #    affected from this top level makefile
 
 BINARY_NAME = foo
-CC = clang++ 
+CC = g++-4.7
 CC_FLAGS = 
 
 LIB_FLAGS = 
